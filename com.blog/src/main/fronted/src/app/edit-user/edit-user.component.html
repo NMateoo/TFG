@@ -1,0 +1,31 @@
+<div class="flex justify-center items-center mt-10 mb-5 text-white">
+    <div class="w-1/2">
+        <h1 class="text-5xl font-bold mb-6 text-center">Editar perfil</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium">Email*</label>
+                <input [ngClass]="{'border-red-600 focus:ring-red-600 focus:border-red-600': hasErrors('email', 'required') || hasErrors('email', 'email')}"
+                    type="text" id="email" formControlName="email"
+                    class="bg-gray-700 border border-gray-500 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5"
+                    placeholder="Cultivo de manzano, de principio a fin..." autocomplete="off" />
+                <p *ngIf="hasErrors('email', 'required')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Email
+                    requerido</p>
+                <p *ngIf="hasErrors('email', 'email')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Formato de email invalido</p>
+            </div>
+
+            <div class="mb-5">
+                <label for="avatar" class="block mb-2 text-sm font-medium">Avatar*</label>
+                <input [ngClass]="{'border-red-600 focus:ring-red-600 focus:border-red-600': hasErrors('avatar', 'required')}"
+                    type="input" id="avatar" formControlName="avatar" autocomplete="off"
+                    class="bg-gray-700 border border-gray-500 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5"
+                    placeholder="URL de tu avatar" />
+                <p *ngIf="hasErrors('avatar', 'required')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Avatar
+                    requerido</p>
+            </div>
+            <div class="flex items-center justify-between py-2">
+                <button type="submit"
+                    class="inline-flex items-center py-2.5 px-4 font-medium text-center text-white bg-emerald-800 rounded-lg focus:ring-4 focus:ring-emerald-200 hover:bg-emerald-900">Aceptar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<aside class="bg-gray-800 border-2 border-gray-700 shadow-xl p-4 mt-10 text-white">
+    <h2 class="text-lg font-semibold mb-4 border-b-2 border-gray-700">Filtrar por categoría</h2>
+    <ul class="grid space-y-2 text-center text-lg">
+        <li>
+            <a (click)="seleccionarCategoria('General')" class="hover:text-green-600 transition-all border-b-2 border-gray-700 cursor-pointer">General</a>
+        </li>
+        <li>
+            <a (click)="seleccionarCategoria('Naturaleza')" class="hover:text-green-600 transition-all border-b-2 border-gray-700 cursor-pointer">Naturaleza</a>
+        </li>
+        <li>
+            <a (click)="seleccionarCategoria('Gastronomía')" class="hover:text-green-600 transition-all border-b-2 border-gray-700 cursor-pointer">Gastronomía</a>
+        </li>
+        <li>
+            <a (click)="seleccionarCategoria('Viajes')" class="hover:text-green-600 transition-all border-b-2 border-gray-700 cursor-pointer">Viajes</a>
+        </li>
+        <li>
+            <a (click)="seleccionarCategoria('Salud')" class="hover:text-green-600 transition-all border-b-2 border-gray-700 cursor-pointer">Salud</a>
+        </li>
+        <li>
+            <a (click)="seleccionarCategoria('Tecnologia')" class="hover:text-green-600 transition-all border-b-2 border-gray-700 cursor-pointer">Tecnologia</a>
+        </li>
+    </ul>
+    <a (click)="quitarFiltro()" class="hover:text-red-600 transition-all border-b-2 border-gray-700 cursor-pointer">Mostrar todas</a>
+</aside>

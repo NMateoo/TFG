@@ -1,0 +1,26 @@
+<div class="flex justify-center items-center mt-10 mb-5 text-white">
+    <div class="w-1/2">
+        <h1 class="text-5xl font-bold mb-6 text-center">Iniciar sesión</h1>
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <div class="mb-5">
+                <label for="username" class="block mb-2 text-sm font-medium">Usuario*</label>
+                <input [ngClass]="{'border-red-600 focus:ring-red-600 focus:border-red-600': hasErrors('username', 'required') || hasErrors('username', 'minlength')}" type="text" id="username" formControlName="username"
+                    class="bg-gray-700 border border-gray-500 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5"
+                    placeholder="username88" autocomplete="off"/>
+                <p *ngIf="hasErrors('username', 'required')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Usuario requerido</p>
+                <p *ngIf="hasErrors('username', 'minlength')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> El usuario debe tener al menos 5 caracteres</p>
+            </div>
+            <div class="mb-5">
+                <label for="password" class="block mb-2 text-sm font-medium">Contraseña*</label>
+                <input [ngClass]="{'border-red-600 focus:ring-red-600 focus:border-red-600': hasErrors('password', 'required') || hasErrors('password', 'minlength')}" type="password" id="password" formControlName="password"
+                    class="bg-gray-700 border border-gray-500 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5"
+                    autocomplete="off"/>
+                <p *ngIf="hasErrors('password', 'required')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Contraseña requerida</p>
+                <p *ngIf="hasErrors('password', 'minlength')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> La contraseña debe tener al menos 8 caracteres</p>
+            </div>
+            <button type="submit"
+                class="text-white bg-emerald-800 hover:bg-emerald-900 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mr-3">Aceptar</button>
+            <a [routerLink]="['/register']" class=" text-sm transition-all font-medium hover:underline">No tengo cuenta</a>
+        </form>
+    </div>
+</div>

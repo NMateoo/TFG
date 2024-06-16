@@ -1,0 +1,12 @@
+/* home.component.css */
+.grid {
+    display: grid;
+    gap: 10rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  

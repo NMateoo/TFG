@@ -1,0 +1,41 @@
+<div class="flex justify-center items-center mt-10 mb-5 text-white">
+    <div class="w-1/2">
+      <h1 class="text-5xl font-bold mb-6 text-center">Editar publicación</h1>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-5">
+          <label for="titulo" class="block mb-2 text-sm font-medium">Título*</label>
+          <input
+            [ngClass]="{'border-red-600 focus:ring-red-600 focus:border-red-600': hasErrors('titulo', 'required') || hasErrors('titulo', 'minlength')}"
+            type="text" id="titulo" formControlName="titulo"
+            class="bg-gray-700 border border-gray-500 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5"
+            placeholder="Cultivo de manzano, de principio a fin..." autocomplete="off" />
+          <p *ngIf="hasErrors('titulo', 'required')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Título requerido</p>
+          <p *ngIf="hasErrors('titulo', 'minlength')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> El título debe tener al menos 10 caracteres</p>
+        </div>
+        <div class="mb-5">
+          <label for="imagen" class="block mb-2 text-sm font-medium">Imagen</label>
+          <input
+            type="input" id="imagen" formControlName="imagen"
+            class="bg-gray-700 border border-gray-500 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5"
+            placeholder="URL de tu imagen"
+            />
+        </div>
+        <div class="w-full mb-4">
+            <label for="comentario" class="block mb-2 text-sm font-medium">Cuerpo*</label>
+          <div class="px-4 py-2 bg-gray-700 rounded-t-lg border border-gray-500"
+          [ngClass]="{'border-red-600 focus:ring-red-600 focus:border-red-600': hasErrors('comentario', 'required') || hasErrors('comentario', 'minlength')}">
+            <textarea id="comment" rows="4"
+              class="w-full px-0 text-sm bg-gray-700 border-0 focus:ring-0"
+              placeholder="¿Qué has hecho hoy?" required formControlName="comentario"></textarea>
+          </div>
+          <p *ngIf="hasErrors('comentario', 'required')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> Cuerpo de la publicación requerido</p>
+          <p *ngIf="hasErrors('comentario', 'minlength')" class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> El post debe tener al menos 20 caracteres</p>
+        </div>
+  
+        <div class="flex items-center justify-between py-2">
+          <button type="submit" class="inline-flex items-center py-2.5 px-4 font-medium text-center text-white bg-emerald-800 rounded-lg focus:ring-4 focus:ring-emerald-200 hover:bg-emerald-900">Editar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

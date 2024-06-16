@@ -1,0 +1,4 @@
+.form-radio:checked {
+    background-color: rgb(4, 120, 87);
+    outline: none
+}
